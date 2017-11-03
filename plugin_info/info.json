@@ -1,0 +1,11 @@
+{
+	"id" : "homanager",
+	"name" : "Home manager",
+	"description" : "Plugin couteaux suisse pour la gestion de la maison",
+	"licence" : "AGPL",
+	"author" : "Loïc",
+	"require" : "3.1",
+	"category" : "organization",
+	"changelog" : "https://github.com/zoic21/plugin-homanager/blob/master/doc/#language#/changelog.asciidoc",
+	"documentation" : "https://github.com/zoic21/plugin-homanager/blob/master/doc/#language#/index.asciidoc"
+}
