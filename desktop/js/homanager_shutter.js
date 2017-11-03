@@ -46,10 +46,6 @@
     $(this).closest('.window').remove();
 });
 
- $("#div_zshutters").delegate('.bt_removeLuminosity', 'click', function () {
-    $(this).closest('.luminosity').remove();
-});
-
  $("#div_zshutters").delegate('.bt_addShutter', 'click', function () {
     addShutter({},$(this).closest('.zshutter'));
 });

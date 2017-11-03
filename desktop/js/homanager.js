@@ -34,6 +34,10 @@
     var el = $(this).closest('.input-group').find('input');
     jeedom.cmd.getSelectModal({cmd : cmd}, function (result) {
         el.value(result.human);
+        jeedom.cmd.displayActionOption(result.human, '', function (html) {
+          el.closest('.form-group').find('.actionOptions').html(html);
+          taAutosize();
+      });
     });
 });
 
@@ -74,6 +78,21 @@ function printEqLogic(_eqLogic) {
     actionOptions = []
     printLight(_eqLogic);
     printShutter(_eqLogic);
+    printSpresence(_eqLogic);
+
+    jeedom.cmd.displayActionsOption({
+        params : actionOptions,
+        async : false,
+        error: function (error) {
+          $('#div_alert').showAlert({message: error.message, level: 'danger'});
+      },
+      success : function(data){
+        for(var i in data){
+            $('#'+data[i].id).append(data[i].html.html);
+        }
+        taAutosize();
+    }
+});
 }
 
 function saveEqLogic(_eqLogic) {
@@ -82,5 +101,6 @@ function saveEqLogic(_eqLogic) {
     }
     _eqLogic = saveLight(_eqLogic);
     _eqLogic = saveShutter(_eqLogic);
+    _eqLogic = saveSpresence(_eqLogic);
     return _eqLogic;
 }

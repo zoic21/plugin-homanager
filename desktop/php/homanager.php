@@ -155,8 +155,11 @@ foreach (homanager::$_motors as $motor => $value) {
 </div>
 
 <div role="tabpanel" class="tab-pane" id="spresencetab">
-  <br/>
-
+   <a class="btn btn-success btn-xs pull-right" id="bt_addSpresence" style="margin-top:3px;"><i class="fa fa-plus-circle"></i> {{Ajouter une simulation}}</a>
+ <br/><br/>
+ <form class="form-horizontal">
+  <div id="div_zspresences"></div>
+</form>
 
 </div>
 
@@ -166,6 +169,7 @@ foreach (homanager::$_motors as $motor => $value) {
 </div>
 <?php include_file('desktop', 'homanager_light', 'js', 'homanager');?>
 <?php include_file('desktop', 'homanager_shutter', 'js', 'homanager');?>
+<?php include_file('desktop', 'homanager_spresence', 'js', 'homanager');?>
 <?php include_file('desktop', 'homanager', 'js', 'homanager');?>
 
 <?php include_file('core', 'plugin.template', 'js');?>
